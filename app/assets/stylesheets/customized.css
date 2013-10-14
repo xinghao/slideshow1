@@ -28,6 +28,7 @@
 body {
   /*font-family: titilliumtext22llight, gillsans, pala, sans-serif;*/
   font-family: gillsans, pala, sans-serif;
+  background-color:#fff;
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
@@ -50,14 +51,9 @@ img{
   margin-bottom:5px;
 }
 .menu{
-  width:75%;
-  margin:0 auto;
+  margin:30px auto;
   /*margin-top:25px;*/  
 }
-.menu a{
-  float:left;
-}
-/*
 .menu div{
   text-align:center;
 }
@@ -74,7 +70,7 @@ img{
   text-decoration:none;
    
 }
-*/
+
 .footer{
   height:46px;
   width:100%;
@@ -115,4 +111,16 @@ img{
     text-align: center;
     z-index: 15;
     font-size:34px;
+}
+nav.navbar-fixed-top, nav.navbar-fixed-bottom{
+  border-width:0px;
+}
+.navbar{
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none; 
+  background-color:#fff;
+}
+.navbar-default{
+  background-color:#fff;
 }

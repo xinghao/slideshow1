@@ -1,9 +1,17 @@
 .header-div
   .logo
     =link_to image_tag("yenta_logo_wb.jpg"), "/"
-  .menu
-    =link_to image_tag("menu_home_active.jpg"), "" 
-    =link_to image_tag("menu_wwr.jpg"), "", {"in" =>  "/assets/menu_wwr_active.jpg", "out" =>  "assets/menu_wwr.jpg"}
-    =link_to image_tag("menu_wwd.jpg"), "", {"in" =>  "/assets/menu_wwd_active.jpg", "out" =>  "assets/menu_wwd.jpg"}
-    =link_to image_tag("menu_cu.jpg"), "", {"in" =>  "/assets/menu_cu_active.jpg", "out" =>  "assets/menu_cu.jpg"}
+  .menu.row
+    .col-lg-2.col-md-2
+      =" "  
+    .col-lg-2.col-md-2
+      =link_to "Home", "", class:"active"
+    .col-lg-2.col-md-2
+      =link_to "Who we are", ""
+    .col-lg-2.col-md-2
+      =link_to "What we do", ""
+    .col-lg-2.col-md-2
+      =link_to "Contact Us", ""
+    .col-lg-2.col-md-2
+      =" "      
   .clear 
