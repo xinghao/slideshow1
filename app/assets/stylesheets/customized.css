@@ -65,7 +65,7 @@ img{
   -webkit-font-smoothing: antialiased;
     
 }
-.menu a:focus, a:hover{
+.menu a:focus, .menu a:hover{
   background: url('under_line_dot.png') repeat-x bottom;
   text-decoration:none;
    
