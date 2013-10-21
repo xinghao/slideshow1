@@ -34,10 +34,11 @@ body {
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   font-family: pala, sans-serif;
 }
-
+/*
 img{
   width:100%;
 }
+*/
 .clear{
   clear:both;
 }
@@ -123,4 +124,145 @@ nav.navbar-fixed-top, nav.navbar-fixed-bottom{
 }
 .navbar-default{
   background-color:#fff;
+}
+
+/*static pages*/
+.logo-small{
+  margin:auto;
+  height:133px;
+  width:280px;
+}
+
+.header-div-static{
+  height:215px;
+}
+.background-image{
+  /*position:fixed;*/
+  position:absolute;
+  top:215px;
+  left:0;
+  width:100%;
+  z-index:-1;  
+}
+.main-content{
+  z-index:100;
+}
+.main-content, .contact_us_wrap .button, .contact_us_wrap .plain, .contact_us_wrap .form-wrap{
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+  background-color:#000;
+  background: rgba(64, 64, 64, 0.8);
+  border:none;
+  color:#fff;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#04040400, endColorstr=#04040400);  
+}
+.main-content{
+  padding:10px 50px;
+}
+/*
+.wwr{
+  margin:40px 110px 0px 110px;
+}
+*/
+.wwr, .wwd, .privacy, .contact_us_wrap{
+  margin:40px 80px 0px 80px;
+}
+.content_title{
+  font-size:31px;
+  margin-top:20px;
+  margin-bottom:10px;
+  text-align:center;
+  border-bottom: 2px solid #fff;
+  line-height:33px;
+}
+.case{
+  margin-bottom:3px;
+  margin-left:10px;
+}
+.content_body p{
+  margin:20px 0;
+}
+.header-div-static{
+  background-color:#fff;
+}
+.quote{
+  margin:auto 0px;
+  text-align:center;
+}
+.left-quote{
+  text-align:right;
+}
+.right-quote{
+  text-align:left;
+}
+.contact_us_wrap{
+  text-align:center;
+ 
+}
+.contact_us_wrap .button, .contact_us_wrap .plain{
+    margin:0px 40px;
+  margin-top:100px;
+  display:block;
+  color:#eee;
+
+}
+.contact_us_wrap .button{
+  font-size:35px;
+  padding:110px 0px;
+  
+}
+.contact_us_wrap .plain{
+  padding:50px 0px;
+  font-size:20px;
+}
+.email_wrap{
+  margin:10px 0px;
+}
+.email_wrap a{
+  color:#eee;
+}
+.phone_wrap span{
+  font-size:16px;
+}
+.enquire_btn{
+  margin-right:15px;
+}
+.enquire_btn, .enquire_btn:hover{
+  color:#999;
+  background-color:#fff;  
+} 
+.form-wrap{
+  padding:30px 0px;
+}
+.form-wrap .form-horizontal{
+  width:85%;
+  margin:auto;
+  
+}
+.form_title{
+  text-align:left;
+  font-size:22px;
+  border-bottom: 2px solid #fff;
+}
+.alert ul{
+  padding-left:0px;
+}
+.alert ul li{
+  float:left;
+}
+.button .alert{
+  font-size:12px;
+  margin-top:-70px;  
+}
+.button{
+  cursor:pointer;
+}
+.radio_button input[type="radio"]{
+  float:left;
+  width:15%;
+  margin-top:10px;
+}
+.radio_button input[type="text"]{
+  width:85%;
 }

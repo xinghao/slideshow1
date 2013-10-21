@@ -1,0 +1,2 @@
+class EnquiresController < ApplicationController
+end

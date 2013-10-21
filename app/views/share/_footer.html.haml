@@ -1,20 +1,19 @@
-.footer.row
-  .footer-menu.col-lg-8.col-md-8.footer-links
-    %ul.nav
-      %li
-        ="<a>© 2013 YENTA Australia Pty. Ltd.</a>".html_safe
-      %li
-        =link_to "privacy", ""
-      %li
-        =link_to "copyright", ""
-      %li
-        =link_to "disclaimer", ""           
-  .social-links.col-lg-4.col-md-4.footer-links
-    %ul.nav
-      %li
-        =link_to image_tag("wireless.png"),""        
-      %li
-        =link_to image_tag("linkedin.png"),""
-      %li
-        =link_to image_tag("facebook.png"),""       
-  .clear 
+.footer-menu.col-lg-8.col-md-8.footer-links
+  %ul.nav
+    %li
+      ="<a>© 2013 YENTA Australia Pty. Ltd.</a>".html_safe
+    %li
+      =link_to "privacy", privacy_path
+    %li
+      =link_to "copyright", ""
+    %li
+      =link_to "disclaimer", ""           
+.social-links.col-lg-4.col-md-4.footer-links
+  %ul.nav
+    %li
+      =link_to image_tag("wireless.png"),""        
+    %li
+      =link_to image_tag("linkedin.png"),""
+    %li
+      =link_to image_tag("facebook.png"),""       
+.clear 

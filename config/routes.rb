@@ -1,9 +1,21 @@
 Yenta::Application.routes.draw do
+  resources :bookings
+
+  resources :enquires
+
+  get "contact/index"
   get "health_check/index"
   get "home/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
+  get "who-we-are" => "static#wwr", as: :who_we_are
+  get "what-we-do" => "static#wwd", as: :what_we_do
+  get "privacy" => "static#privacy", as: :privacy
+  
+  get "contact_us" => "contact#index", as: :contact_us
+  
+  post "create_enquire" => "contact#create_enquire", as: :create_enquire
+  post "create_booking" => "contact#create_booking", as: :create_booking
   # You can have the root of your site routed with "root"
   root 'home#index'
 

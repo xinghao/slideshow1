@@ -1,0 +1,9 @@
+<% if object.errors.any? %>
+<div class="alert alert-danger clearfix" id="">
+  <ul>
+    <% object.errors.each do |key, value| %>
+      <li><%=t(key)%> <%= t(value) %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
