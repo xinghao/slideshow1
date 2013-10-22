@@ -256,7 +256,13 @@ nav.navbar-fixed-top, nav.navbar-fixed-bottom{
   margin-top:-70px;  
 }
 .button{
+  z-index: 999;
+}
+.button a,.button a:focus, .button a:hover{
+  color:#fff;
+  text-decoration: none;
   cursor:pointer;
+  
 }
 .radio_button input[type="radio"]{
   float:left;

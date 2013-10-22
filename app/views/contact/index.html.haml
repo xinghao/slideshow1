@@ -4,14 +4,4 @@
   .col-lg-4.col-md-4
     =render "enquire_form"
   .col-lg-4.col-md-4
-    .plain
-      .skype_img
-        =image_tag "skype-logo.png", width:"150px;"
-      .email_wrap
-        %a{"href"=>"mailto:info@yenta.com"}
-          info@yenta.com
-      .phone_wrap
-        1800 GO YENTA
-        %br
-        %span
-          (1800 469 382)
+    =render "skype"

@@ -1,11 +1,12 @@
 -string_button = @hide_booking_form? "":"hidden"
 -string_form = @hide_booking_form? "display:none":""
-%div{"class" => "button #{string_button}", "data_target"=>"booking-from"}
+%div{"class" => "button #{string_button}"}
   -flash.each do |name, msg| 
     - if ContactController::BOOKING_FLASH == msg
       =content_tag :div, msg, class: "alert alert-success"    
-  BOOKING
-%div{"class" => "form-wrap", "id"=>"booking-from", "style"=>"#{string_form}"}
+  %a{"data_target"=>"bookingfrom", "id"=>"bookingbutton", "onclick" => "popupBox('bookingbutton','bookingfrom')"}
+    BOOKING
+%div{"class" => "form-wrap", "id"=>"bookingfrom", "style"=>"#{string_form}"}
   =form_for @booking, url: {action: "create_booking"}, html: {class: "form-horizontal"} do |f|
     .form-group
       .col-lg-offset-3.col-lg-8.form_title
