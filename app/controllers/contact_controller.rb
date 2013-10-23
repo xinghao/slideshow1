@@ -9,6 +9,7 @@ class ContactController < ApplicationController
   
   def create_enquire
     if (@enquire.update_attributes(enquire_params))
+      NoticeMailer.enquire_email(@enquire).deliver
       flash[:notice] = ENQUIRE_FLASH
       redirect_to action: :index
       return
@@ -20,6 +21,7 @@ class ContactController < ApplicationController
   
   def create_booking
     if (@booking.update_attributes(booking_params))
+      NoticeMailer.booking_email(@booking).deliver
       flash[:notice] = BOOKING_FLASH
       redirect_to action: :index
       return
