@@ -1,14 +1,19 @@
 .button
-  %a{"data_target"=>"skypeinfo", "id"=>"skypebutton", "onclick" => "popupBox('skypebutton','skypeinfo')"}
+  %a{"data-target"=>"#skypeinfo", "data-toggle"=>"modal" }
     Call Us
-%div{"class" => "plain", "id"=>"skypeinfo", "style"=>"display:none"}
-  .skype_img
-    =image_tag "skype-logo.png", width:"150px;"
-  .email_wrap
-    %a{"href"=>"mailto:info@yenta.com"}
-      info@yenta.com
-  .phone_wrap
-    1800 GO YENTA
-    %br
-    %span
-      (1800 469 382)
+%div{"class" => "modal fade form-wrap", "id"=>"skypeinfo", "tabindex"=>"0", "role"=>"dialog", "aria-labelledby"=>"myModalLabel", "aria-hidden"=>"true"}
+  .modal-dialog
+    .modal-content 
+      .modal-body 
+        .skype_img
+          =image_tag "skype-logo.png", width:"150px;"
+          %button{"type"=>"button", "class"=>"close", "data-dismiss"=>"modal", "aria-hidden"=>"true"}
+            &times;          
+        .email_wrap
+          %a{"href"=>"mailto:info@yenta.com"}
+            info@yenta.com
+        .phone_wrap
+          1800 GO YENTA
+          %br
+          %span
+            (1800 469 382)
