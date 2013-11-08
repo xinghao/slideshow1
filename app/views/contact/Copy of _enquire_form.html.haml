@@ -1,0 +1,33 @@
+-string_button = @hide_enquire_form? "":"hidden"
+-string_form = @hide_enquire_form? "display:none":""
+%div{"class" => "button #{string_button}"}
+  -flash.each do |name, msg|
+    - if ContactController::ENQUIRE_FLASH == msg     
+      =content_tag :div, msg, class: "alert alert-success"    
+  %a{"data_target"=>"enquirefrom", "id"=>"enquirebutton", "onclick" => "popupBox('enquirebutton','enquirefrom')"}
+    ENQUIRY
+%div{"class" => "form-wrap", "id"=>"enquirefrom", "style"=>"#{string_form}"}
+  =form_for @enquire, url: {action: "create_enquire"}, html: {class: "form-horizontal"} do |f|
+    .form-group
+      .col-lg-offset-3.col-lg-9.form_title
+        Enquire
+        =image_tag "case.png", class: "case"
+    .form-group
+      .col-lg-offset-3.col-lg-9
+        = render :partial => "/share/cf_error_messages",:locals => {:object => @enquire,:include_object_name => true}   
+    .form-group
+      =label_tag :first_name, "*First Name", class:"col-lg-3 control-label"
+      .col-lg-9
+        =f.text_field :first_name, class:"form-control"
+    .form-group
+      =label_tag :email, "*Email", class:"col-lg-3 control-label"
+      .col-lg-9        
+        =f.email_field :email, class:"form-control"
+    .form-group
+      =label_tag :message, "tell us about your travels", class:"col-lg-3 control-label"
+      .col-lg-9            
+        =f.text_area :message, class:"form-control", rows:8
+    .form-group
+      .pull-right
+        =f.submit "Submit", class:"enquire_btn btn btn-default btn-lg"
+    

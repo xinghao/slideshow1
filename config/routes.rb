@@ -1,4 +1,9 @@
 Yenta::Application.routes.draw do
+
+  get "admin" => "admin#index", as: :user_root
+  get "admin/bookings" => "admin#bookings", as: :admin_bookings
+  get "admin/enquires" => "admin#enquires", as: :admin_enquires
+  devise_for :users, :controllers => { :sessions => 'sessions' }
   resources :bookings
 
   resources :enquires

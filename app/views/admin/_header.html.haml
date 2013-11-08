@@ -1,0 +1,27 @@
+.navbar.navbar-inverse.navbar-fix-top{"role"=>"navigation"}
+  .container
+    .navbar-header
+      = link_to "Yenta", "/", class:"navbar-brand"
+    .navbar-collapse.collapse
+      %ul.nav.navbar-nav      
+        -if action?("index")
+          %li.active
+            = link_to "Dashboard", user_root_path     
+        -else
+          %li
+            = link_to "Dashboard", user_root_path 
+        -if action?("bookings")
+          %li.active
+            = link_to "Bookings", admin_bookings_path                            
+        -else
+          %li
+            = link_to "Bookings", admin_bookings_path
+        -if action?("enquires")
+          %li.active
+            = link_to "Enquires", admin_enquires_path
+        -else          
+          %li
+            = link_to "Enquires", admin_enquires_path
+      .logout.pull-right
+        = link_to('Logout', destroy_user_session_path, :method => :delete)
+        

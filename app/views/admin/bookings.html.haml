@@ -1,0 +1,39 @@
+%h3
+  Total:
+  =@bookings.size
+%table.table.table-striped.table-hover
+  %tr
+    %th
+      first_name
+    %th
+      surname
+    %th
+      place_of_origin
+    %th
+      email
+    %th
+      accept_call
+    %th
+      phone
+    %th
+      message
+    %th
+      created at
+  -@bookings.each do |b|
+    %tr
+      %td
+        =b.first_name
+      %td
+        =b.surname
+      %td
+        =b.place_of_origin
+      %td
+        =b.email
+      %td
+        =b.accept_call
+      %td
+        =b.phone
+      %td
+        =b.message
+      %td  
+        =b.created_at

@@ -1,0 +1,23 @@
+%h3
+  Total:
+  =@entries.size
+%table.table.table-striped.table-hover
+  %tr
+    %th
+      first_name
+    %th
+      email
+    %th
+      message
+    %th
+      created at
+  -@entries.each do |e|
+    %tr
+      %td
+        =e.first_name
+      %td
+        =e.email
+      %td
+        =e.message
+      %td  
+        =e.created_at

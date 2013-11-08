@@ -1,0 +1,46 @@
+-string_button = @hide_booking_form? "":"hidden"
+-string_form = @hide_booking_form? "display:none":""
+%div{"class" => "button #{string_button}"}
+  -flash.each do |name, msg| 
+    - if ContactController::BOOKING_FLASH == msg
+      =content_tag :div, msg, class: "alert alert-success"    
+  %a{"data_target"=>"bookingfrom", "id"=>"bookingbutton", "onclick" => "popupBox('bookingbutton','bookingfrom')"}
+    BOOKING
+%div{"class" => "form-wrap", "id"=>"bookingfrom", "style"=>"#{string_form}"}
+  =form_for @booking, url: {action: "create_booking"}, html: {class: "form-horizontal"} do |f|
+    .form-group
+      .col-lg-offset-3.col-lg-8.form_title
+        Booking
+        =image_tag "case.png", class: "case"
+    .form-group
+      .col-lg-offset-3.col-lg-8
+        = render :partial => "/share/cf_error_messages",:locals => {:object => @booking,:include_object_name => true}   
+    .form-group
+      =label_tag :first_name, "*First Name", class:"col-lg-4 control-label"
+      .col-lg-8
+        =f.text_field :first_name, class:"form-control"
+    .form-group
+      =label_tag :first_name, "*Surname", class:"col-lg-4 control-label"
+      .col-lg-8
+        =f.text_field :surname, class:"form-control"
+    .form-group
+      =label_tag :place_of_origin, "*Place of Origin", class:"col-lg-4 control-label"
+      .col-lg-8
+        =f.collection_select :place_of_origin,  IsoCountry.country_names,:name,:name, {},  {"class" => "form-control"}                        
+    .form-group
+      =label_tag :email, "*Email", class:"col-lg-4 control-label"
+      .col-lg-8        
+        =f.email_field :email, class:"form-control"
+    .form-group.radio_button
+      =label_tag :phone, "Can we call you?", class:"col-lg-4 control-label"
+      .col-lg-8
+        =f.radio_button :accept_call     , true                            
+        =f.text_field :phone, class:"form-control"
+    .form-group
+      =label_tag :message, "tell us about your travels", class:"col-lg-4 control-label"
+      .col-lg-8            
+        =f.text_area :message, class:"form-control", rows:8
+    .form-group
+      .pull-right
+        =f.submit "Submit", class:"enquire_btn btn btn-default btn-lg"
+    
