@@ -100,6 +100,7 @@ img{
 }
 .social-links{
   text-align:right;
+  padding-top:4px;
 }
 .social-links img{
   height:46px;
@@ -154,7 +155,7 @@ nav.navbar-fixed-top, nav.navbar-fixed-bottom{
   top:0px;
   left:0;
   width:100%;
-  z-index:-1;  
+  z-index:-1;
 }
 .main-content{
   z-index:100;
@@ -334,4 +335,7 @@ nav.navbar-fixed-top, nav.navbar-fixed-bottom{
 }
 .foot-static{
   background-color:#000000;
+}
+p.align-center{
+  text-align:center;
 }
