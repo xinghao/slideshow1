@@ -339,3 +339,8 @@ nav.navbar-fixed-top, nav.navbar-fixed-bottom{
 p.align-center{
   text-align:center;
 }
+p span{
+  text-align:left;
+  display:block;
+  margin-top:5px;  
+}
