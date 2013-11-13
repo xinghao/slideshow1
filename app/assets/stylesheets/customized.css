@@ -1,4 +1,5 @@
- @font-face {
+/*
+@font-face {
  font-family: 'oswaldregular';
  src: url('oswald.regular-webfont.eot');
  src: url('oswald.regular-webfont.eot?#iefix') format('embedded-opentype'),  url('oswald.regular-webfont.woff') format('woff'),  url('oswald.regular-webfont.ttf') format('truetype'),  url('oswald.regular-webfont.svg#oswaldregular') format('svg');
@@ -16,18 +17,22 @@
 @font-face {
  font-family: 'pala';
  src: url('pala.ttf'),
-     url('pala.eot'); /* IE9 */ 
+     url('pala.eot'); 
 }
 
 @font-face {
  font-family: 'gillsans';
  src: url('gillsans.ttf'),
-     url('gillsans.eot'); /* IE9 */ 
+     url('gillsans.eot'); 
 }
-
+*/
+@font-face {
+ font-family: 'helveticaNeue';
+ src: url('HelveticaNeue.ttf'),url('HelveticaNeue.eot');
+}
 body {
   /*font-family: titilliumtext22llight, gillsans, pala, sans-serif;*/
-  font-family: gillsans, pala, sans-serif;
+  font-family: helveticaNeue, pala, sans-serif;
   background-color:#fff;
   /*overflow:hidden;*/
 }
@@ -61,12 +66,12 @@ img{
   text-align:center;
 }
 .menu a{
-  color:#7a7a7a;
-  font-size:20px;
+  color:#666;
+  font-size:18px;
   line-height:22px;
   text-rendering: optimizeLegibility;  
   -webkit-font-smoothing: antialiased;
-    
+  text-transform:uppercase;
 }
 .menu a.active, .menu a:focus, .menu a:hover{
   background: url('under_line_dot.png') repeat-x bottom;
@@ -160,17 +165,17 @@ nav.navbar-fixed-top, nav.navbar-fixed-bottom{
 .main-content{
   z-index:100;
 }
-.main-content, .contact_us_wrap .button, .contact_us_wrap .plain, .contact_us_wrap .form-wrap{
+.main-content, .booking-form, .contact_us_wrap .button, .contact_us_wrap .plain, .contact_us_wrap .form-wrap{
   -webkit-border-radius: 8px;
      -moz-border-radius: 8px;
           border-radius: 8px;
   background-color:#000;
-  background: rgba(64, 64, 64, 0.8);
+  background: rgba(32, 32, 32, 0.8);
   border:none;
   color:#fff;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#04040400, endColorstr=#04040400);  
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#02020200, endColorstr=#02020200);  
 }
-.main-content{
+.main-content,.booking-form{
   padding:10px 50px;
 }
 /*
@@ -178,7 +183,7 @@ nav.navbar-fixed-top, nav.navbar-fixed-bottom{
   margin:40px 110px 0px 110px;
 }
 */
-.wwr, .wwd, .privacy, .contact_us_wrap{
+.wwr, .wwd, .privacy, .contact_us_wrap,.booking-form{
   margin:40px 80px 0px 80px;
 }
 .content_title{
@@ -344,3 +349,59 @@ p span{
   display:block;
   margin-top:5px;  
 }
+
+.booking-form{
+  width:60%;  
+  margin:auto;
+  margin-top: 40px;
+  margin-bottom: 38px;
+}
+.booking-form-content{
+  width:90%;
+  margin:auto;
+}
+.datepicker-input input{
+  padding-right:24px;
+}
+.datepicker-input img{
+  width:24px;
+  height:24px;
+  position: absolute;
+  top: 4px;
+  right:24px;
+  cursor: pointer;  
+}
+.alert ul li{
+  display:block;
+  width:100%;
+}
+@media (min-width: 1500px) {
+.main-content,.contact_us_wrap,.booking-form{
+   width:80%;
+   margin:auto;   
+   margin-top: 80px;   
+}
+}  
+@media (min-width: 2000px) {
+.main-content,.contact_us_wrap,.booking-form{
+   width:60%;
+   margin:auto;   
+   margin-top: 160px;
+}
+}
+@media (min-width: 2500px) {
+.main-content,.contact_us_wrap,.booking-form{
+   width:50%;
+   margin:auto;   
+   margin-top: 320px;
+   min-height:600px;
+}
+}    
+@media (min-width: 2800px) {
+.main-content,.contact_us_wrap,.booking-form{
+   width:40%;
+   margin:auto;   
+   margin-top: 400px;
+   min-height:800px;
+}
+}    
