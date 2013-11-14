@@ -1,23 +1,33 @@
 First Name:
 =@booking.first_name
 %br
-Surname:
-=@booking.surname
-%br
-Place of origin:
-=@booking.place_of_origin
+Last Name:
+=@booking.last_name
 %br
 Email:
 =@booking.email
 %br
-Accept Call?:
-=@booking.accept_call
+Number of Passengers:
+=@booking.number_of_passangers
 %br
-Phone:
-=@booking.phone
+Class:
+=@booking.seat_class
 %br
-Message:
-=@booking.message
+Type:
+=@booking.travel_type
 %br
 Created:
 =@booking.created_at
+%br
+- if @booking.travel_type == Booking::TRAVEL_TYPE_MULTI
+  -@booking.multi_stopovers.each_with_index do |ms, index|
+    ="Flight #{index+1} From: #{ms.from}, To: #{ms.to}, On: #{ms.date}"     
+- else
+  ="From: #{@booking.from}"
+  %br
+  ="To: #{@booking.to}"
+  %br
+  ="Date of Departure: #{@booking.date_of_departure}"
+  -if !@booking.date_of_return.blank?
+    %br
+    ="Date of Return: #{@booking.date_of_return}"

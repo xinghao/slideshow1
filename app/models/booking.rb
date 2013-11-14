@@ -10,8 +10,17 @@ class Booking < ActiveRecord::Base
 
   has_many :multi_stopovers   
   accepts_nested_attributes_for :multi_stopovers
+  before_save :remove_empty_multi_stipovers
   
   TRAVEL_TYPE_ONE_WAY = "one way"
   TRAVEL_TYPE_RETURN = "return"
   TRAVEL_TYPE_MULTI = "multi stopover"
+  
+  def remove_empty_multi_stipovers
+    if self.travel_type == TRAVEL_TYPE_MULTI
+      self.multi_stopovers = self.multi_stopovers.delete_if {|obj| obj.from.blank? && obj.to.blank? && obj.date.blank?}      
+    end
+    return true;
+  end
+  
 end

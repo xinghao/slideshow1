@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
   
   def create
     if (@booking.update_attributes(booking_params))
-#      NoticeMailer.booking_email(@booking).deliver
+      NoticeMailer.booking_email(@booking).deliver
       flash[:notice] = BOOKING_FLASH
       redirect_to action: :new
       return
