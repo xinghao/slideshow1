@@ -1,0 +1,12 @@
+=f.fields_for :multi_stopovers do |ms|
+  .form-group              
+    .col-md-4
+      =label_tag :from, "Flight", class:"control-label"
+      =ms.text_field :from, class:"form-control", placeholder: "City, Country"
+    .col-md-4
+      =label_tag :to, "To", class:"control-label"
+      =ms.text_field :to, class:"form-control", placeholder: "City, Country"
+      
+    .col-md-4.datepicker-input
+      =label_tag :date, "On", class:"control-label"
+      =ms.text_field :date, class:"form-control datepicker", placeholder: "Date of Departure"                                                                               

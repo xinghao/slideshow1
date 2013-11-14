@@ -1,9 +1,12 @@
 %html
   %head
     %title= "Yenta"
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true 
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true     
     = javascript_include_tag "application", "data-turbolinks-track" => true
-    = csrf_meta_tags 
+    = csrf_meta_tags     
+    %meta{"name"=>"viewport", "content"=>"width=device-width, initial-scale=1.0"}
+    %link{"rel"=>"stylesheet", "href"=>"http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"}
+    %script{"src"=>"http://code.jquery.com/ui/1.10.3/jquery-ui.js"}
   %body{"style"=>"background-color: #000;"}
     = render "share/header"
     = image_tag random_background_images, class: "background-image"  

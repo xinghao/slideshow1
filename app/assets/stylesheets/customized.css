@@ -317,7 +317,12 @@ nav.navbar-fixed-top, nav.navbar-fixed-bottom{
   color:#fff;
 }
 
-
+.booking-form-wrap .form-group{
+  margin-bottom:8px;  
+}
+.newflightbutton a{
+  text-decoration:underline;
+}
 
 /*----------admin---------*/
 .logout{

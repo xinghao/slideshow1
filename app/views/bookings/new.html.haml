@@ -1,0 +1,93 @@
+.booking-form
+  -flash.each do |name, msg| 
+    - if ContactController::BOOKING_FLASH == msg
+      =content_tag :div, msg, class: "alert alert-success"
+  .booking-form-wrap
+    =form_for @booking,  html: {class: "form-horizontal"} do |f|
+      .form-group.form_title
+        Booking/Enquire
+        =image_tag "case.png", class: "case"
+      .booking-form-content  
+        .form-group
+          .col-md-offset-4.col-md-8
+            = render :partial => "/share/cf_error_messages",:locals => {:object => @booking,:include_object_name => true}   
+        .form-group
+          =label_tag :travel_type, "*Type", class:"col-md-4 control-label"
+          .col-md-2
+            .radio
+              %label
+                =f.radio_button :travel_type, Booking::TRAVEL_TYPE_RETURN, {checked: @booking.travel_type == Booking::TRAVEL_TYPE_RETURN, onclick: "selectreturn()"}
+                Return
+          .col-md-2
+            .radio
+              %label
+                =f.radio_button :travel_type, Booking::TRAVEL_TYPE_ONE_WAY, {checked: @booking.travel_type == Booking::TRAVEL_TYPE_ONE_WAY, onclick: "selectsingle()"}
+                One Way
+          .col-md-3
+            .radio
+              %label
+                =f.radio_button :travel_type, Booking::TRAVEL_TYPE_MULTI, {checked: @booking.travel_type == Booking::TRAVEL_TYPE_MULTI, onclick: "selectmulti()"}
+                Multi Stopover                
+                                      
+        .form-group
+          =label_tag :name, "*Email", class:"col-md-4 control-label"
+          .col-md-8
+            =f.text_field :email, class:"form-control", placeholder: "Email Address"
+        .form-group
+          =label_tag :name, "*Name", class:"col-md-4 control-label"
+          .col-md-4
+            =f.text_field :first_name, class:"form-control", placeholder: "First Name"
+          .col-md-4
+            =f.text_field :last_name, class:"form-control", placeholder: "Last Name"
+        .form-group
+          =label_tag :number_of_passangers, "*Number of Passangers", class:"col-md-4 control-label"
+          .col-md-8
+            =f.text_field :number_of_passangers, class:"form-control"
+        .form-group
+          =label_tag :seat_class, "*Class", class:"col-md-4 control-label"
+          .col-md-8
+            =f.select :seat_class,  ["Economy", "Premium Economy", "Business", "First"], {},   {class: "form-control"}
+        .returnwrap{"style"=>@return_form}
+          .form-group
+            =label_tag :from, "*From", class:"col-md-4 control-label"
+            .col-md-4
+              =f.text_field :from, class:"form-control", placeholder: "City, Country"
+            .col-md-4.datepicker-input
+              =f.text_field :date_of_departure, class:"form-control datepicker", placeholder: "Date of Departure"           
+          .form-group
+            =label_tag :to, "*To", class:"col-md-4 control-label"
+            .col-md-4
+              =f.text_field :to, class:"form-control", placeholder: "City, Country"
+            .col-md-4.datepicker-input.dateofreturn{"style"=>@single_form}
+              =f.text_field :date_of_return, class:"form-control datepicker", placeholder: "Date of Return"                 
+        .multistopoverswrap{"style"=>@multi_stepover}
+          .form-group              
+            .col-md-1
+              =label_tag :from, "Flight", class:"control-label"
+            .col-md-11
+              .col-md-4
+                =label_tag :from, "From", class:"control-label"
+              .col-md-4
+                =label_tag :to, "To", class:"control-label"              
+              .col-md-4.datepicker-input
+                =label_tag :date, "On", class:"control-label"                                                                               
+          
+          -index = 0
+          .multistopoversdiv
+            =f.fields_for :multi_stopovers do |ms|
+              -index += 1
+              .form-group
+                .col-md-1
+                  =label_tag :from, index, class:"control-label"
+                .col-md-11                          
+                  .col-md-4
+                    =ms.text_field :from, class:"form-control", placeholder: "City, Country"
+                  .col-md-4
+                    =ms.text_field :to, class:"form-control", placeholder: "City, Country"                  
+                  .col-md-4.datepicker-input
+                    =ms.text_field :date, class:"form-control datepicker", placeholder: "Date of Departure"                                                                               
+          .newflightbutton
+            =link_to "Add New Flight +", "#",  onclick: "addnewflight();return false;"               
+        .form-group
+          .pull-right
+            =f.submit "Submit", class:"enquire_btn btn btn-default btn-lg"  
