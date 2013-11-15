@@ -1,4 +1,4 @@
-jQuery(document).ready(function($){
+jQuery(document).ready(function(){
   $( "div.menu a" )
     .mouseenter(function() {    
     var src = $( this ).attr("in");

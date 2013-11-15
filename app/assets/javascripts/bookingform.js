@@ -1,13 +1,3 @@
-jQuery(document).ready(function($){
-  $( ".datepicker" ).datepicker({
-    showOn: "both",
-     buttonImage: '/assets/calendar-128.png', 
-      buttonImageOnly: true,    
-  }    
-  );  
-  
-}); 
-
 function selectreturn(){
   $(".multistopoverswrap").hide();
   $(".returnwrap").show();

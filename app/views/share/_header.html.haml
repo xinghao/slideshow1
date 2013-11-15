@@ -26,9 +26,9 @@
         =link_to "What we do", what_we_do_path
     .col-lg-2.col-md-2
       -if controller?("bookings")
-        =link_to "Booking/Enquire", new_booking_path, class:"active"
+        =link_to "Booking/Enquiry", new_booking_path, class:"active"
       -else
-        =link_to "Booking/Enquire", new_booking_path                
+        =link_to "Booking/Enquiry", new_booking_path                
     .col-lg-2.col-md-2
       -if controller?("contact")
         =link_to "Contact Us", contact_us_path, class:"active"
