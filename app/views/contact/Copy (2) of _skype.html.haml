@@ -1,0 +1,19 @@
+.button
+  %a{"data-target"=>"#skypeinfo", "data-toggle"=>"modal" }
+    Call Us
+%div{"class" => "modal fade form-wrap", "id"=>"skypeinfo", "tabindex"=>"0", "role"=>"dialog", "aria-labelledby"=>"myModalLabel", "aria-hidden"=>"true"}
+  .modal-dialog
+    .modal-content 
+      .modal-body 
+        .skype_img
+          =image_tag "skype-logo.png", width:"150px;"
+          %button{"type"=>"button", "class"=>"close", "data-dismiss"=>"modal", "aria-hidden"=>"true"}
+            &times;          
+        .email_wrap
+          %a{"href"=>"mailto:bookings@travelyenta.com"}
+            bookings@travelyenta.com
+        .phone_wrap
+          1800 GO YENTA
+          %br
+          %span
+            (1800 469 382)
