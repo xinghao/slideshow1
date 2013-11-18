@@ -16,6 +16,7 @@ Yenta::Application.routes.draw do
   get "who-we-are" => "static#wwr", as: :who_we_are
   get "what-we-do" => "static#wwd", as: :what_we_do
   get "privacy" => "static#privacy", as: :privacy
+  get "copyright" => "static#copyright", as: :copyright
   
   get "contact_us" => "contact#index", as: :contact_us
   

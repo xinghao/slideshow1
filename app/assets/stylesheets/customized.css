@@ -190,6 +190,12 @@ nav.navbar-fixed-top, nav.navbar-fixed-bottom{
 .wwr, .wwd, .privacy, .contact_us_wrap,.booking-form, .contact_us{
   margin:40px 80px 0px 80px;
 }
+/*
+.privacy{
+  height: 400px; 
+  overflow-y: scroll;
+}
+*/
 .content_title{
   font-size:26px;
   margin-top:10px;
@@ -383,6 +389,32 @@ p span{
 .alert ul li{
   display:block;
   width:100%;
+}
+
+.content_body .cr strong{
+  font-size:18px;
+}
+.content_body .cr{
+  margin-top:40px;
+}
+.content_body .tn{
+  margin-top:50px;
+  margin-bottom:50px;  
+}
+.privacywrap{
+  margin-bottom:60px;
+}
+
+.privacywrap ol{
+  padding-left:25px;
+  margin-bottom:40px;
+}
+.privacywrap ol strong{
+  clear:both;
+  margin-left:-25px;
+}
+.privacywrap ol li{
+  margin:10px 0px;
 }
 @media (min-width: 1500px) {
 .main-content,.contact_us_wrap,.booking-form, .contact_us{

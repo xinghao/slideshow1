@@ -9,4 +9,7 @@ class StaticController < ApplicationController
   
   def privacy
   end
+  
+  def copyright
+  end
 end
