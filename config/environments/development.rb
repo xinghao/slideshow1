@@ -54,8 +54,8 @@ Yenta::Application.configure do
     :address              => "mail.travelyenta.com",
     :port                 => 25,
     :domain               => 'travelyenta.com',
-    :user_name            => 'admin@travelyenta.com',
-    :password             => 'travelyenta123',
+    :user_name            => 'bookings@travelyenta.com',
+    :password             => 'travelyenta1',
     :authentication       => 'plain',
     :enable_starttls_auto => false
     }  
