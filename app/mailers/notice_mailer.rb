@@ -1,6 +1,6 @@
 class NoticeMailer < ActionMailer::Base
   #default to: "xinghao.yu@airarena.net", from: "admin@travelyenta.com"
-  default to: "bookings@travelyenta.com,xinghao.yu@airarena.net,jaronchester@gmail.com", from: "admin@travelyenta.com"
+  default to: "bookings@travelyenta.com,xinghao.yu@airarena.net,jaronchester@gmail.com", from: "bookings@travelyenta.com"
   
   
   def booking_email(booking)

@@ -1,4 +1,3 @@
-=render "data_pick_js"
 .booking-form
   -flash.each do |name, msg| 
     - if ContactController::BOOKING_FLASH == msg
@@ -92,3 +91,4 @@
         .form-group
           .pull-right
             =f.submit "Submit", class:"enquire_btn btn btn-default btn-lg"  
+=render "data_pick_js"
